@@ -8,7 +8,7 @@ Figura 1 - Logo Choco Arte
 
 ## :memo: Visão Geral
 ### :climbing: O Desafio
-Conceber e desenvolver um protótipo de software para automatizar e otimizar o processo de vendas e controle de estoque da empresa Chocoarte. 
+Conceber e desenvolver um protótipo de software para automatizar e otimizar o processo de vendas e controle de estoque da empresa Choco Arte. 
 
 O desafio central deste projeto é criar a prototipação do sistema de gerenciamento de vendas e estoque da Choco Arte, que atualmente faz toda a gestão de forma manual. Há diversas melhorias que podem ser aplicadas ao método atual utilizado pela empresa, visando torná-lo mais eficiente para seus usuários e aumentando a produtividade e eficácia nas operações cotidianas. 
 
@@ -24,7 +24,7 @@ Atualmente, a Choco Arte não conta com um sistema digital para gestão de venda
 
 ## :mag: Why?
 ### :people_holding_hands: Quem utilizará o sistema?
-O sistema será utilizado exclusivamente pelos proprietários da Chocoarte e os funcionários, não sendo acessado diretamente pelos clientes.
+O sistema será utilizado exclusivamente pelos proprietários da Choco Arte e os funcionários, não sendo acessado diretamente pelos clientes.
 
 #### :mag: Quais seriam os problemas?
 Como a gestão das vendas e do estoque dos produtos acontece de forma manual, o controle das entradas e saídas fica dificultado, tornando o processo de gestão da empresa mais moroso e aumentando a possibilidade de erros.
@@ -193,7 +193,7 @@ Em reunião com o cliente, identificamos as principais necessidades que o sistem
 
 ## 🖌️ Projeto Conceitual e Especificação do Design
 
-![Logo ChocoArte](https://github.com/user-attachments/assets/8d7811ce-1830-4f3f-9342-89459bcb6ac8)<br>Figura 4 - Logo da ChocoArte
+![Logo ChocoArte](https://github.com/user-attachments/assets/8d7811ce-1830-4f3f-9342-89459bcb6ac8)<br>Figura 4 - Logo da Choco Arte
 
 
 ## :paintbrush: Identidade Visual
@@ -228,11 +228,11 @@ Após a criação do Wireframe, a prototipação foi realizada em nível de méd
 
 ## ✅ Conclusão
 
-Com a conclusão deste projeto, encerramos o desenvolvimento do protótipo do sistema de gestão de vendas e controle de estoque para a ChocoArte, sob a orientação da professora Cristiane Aparecida Lana. Este trabalho teve como objetivo criar uma solução personalizada para a ChocoArte, uma empresa que precisava modernizar seus processos operacionais. A FiveTech, ao longo deste projeto, teve a oportunidade de aplicar seu conhecimento em desenvolvimento de software, focando na otimização de processos e criando um protótipo funcional que atendesse às necessidades da empresa.
+Com a conclusão deste projeto, encerramos o desenvolvimento do protótipo do sistema de gestão de vendas e controle de estoque para a ChocoArte, sob a orientação da professora Cristiane Aparecida Lana. Este trabalho teve como objetivo criar uma solução personalizada para a Choco Arte, uma empresa que precisava modernizar seus processos operacionais. A FiveTech, ao longo deste projeto, teve a oportunidade de aplicar seu conhecimento em desenvolvimento de software, focando na otimização de processos e criando um protótipo funcional que atendesse às necessidades da empresa.
 
-Durante a execução do projeto, houve uma integração entre as diversas etapas, como levantamento de requisitos, prototipação e design. Esse processo nos permitiu entender melhor os desafios da ChocoArte e como a tecnologia pode ser uma aliada para melhorar a gestão do dia a dia da empresa. A FiveTech reafirma sua capacidade de oferecer soluções que atendem de forma precisa às necessidades de seus clientes, contribuindo para a melhoria contínua dos seus processos.
+Durante a execução do projeto, houve uma integração entre as diversas etapas, como levantamento de requisitos, prototipação e design. Esse processo nos permitiu entender melhor os desafios da Choco Arte e como a tecnologia pode ser uma aliada para melhorar a gestão do dia a dia da empresa. A FiveTech reafirma sua capacidade de oferecer soluções que atendem de forma precisa às necessidades de seus clientes, contribuindo para a melhoria contínua dos seus processos.
 
-Este projeto reflete o compromisso da FiveTech com inovação, qualidade e eficiência, além de consolidar seu papel como parceira estratégica no mercado de soluções digitais. A orientação da professora Cristiane Aparecida Lana foi fundamental para o sucesso da iniciativa, com seu apoio e direcionamento, conseguimos alcançar nossos objetivos e entregar uma solução tecnológica que, com certeza, fará a diferença para a ChocoArte.
+Este projeto reflete o compromisso da FiveTech com inovação, qualidade e eficiência, além de consolidar seu papel como parceira estratégica no mercado de soluções digitais. A orientação da professora Cristiane Aparecida Lana foi fundamental para o sucesso da iniciativa, com seu apoio e direcionamento, conseguimos alcançar nossos objetivos e entregar uma solução tecnológica que, com certeza, fará a diferença para a Choco Arte.
 
 A primeira versão deste projeto foi desenvolvido pelos alunos:
 
