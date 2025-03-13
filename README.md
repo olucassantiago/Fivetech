@@ -60,138 +60,132 @@ Em reunião com o cliente, identificamos as principais necessidades que o sistem
 
 ## :page_with_curl: Especificação de Requisitos
 
-📋 Requisitos do Sistema
+# 📋 Requisitos do Sistema
 
-📋 Requisito 1: Controle de Estoque
-🆔 ID: REQ-001
-📝 Descrição: O sistema deve permitir o acompanhamento em tempo real do inventário.
-📑 Detalhamento:
+## 📋 Requisito 1: Controle de Estoque
+**🆔 ID:** REQ-001  
+**📝 Descrição:** O sistema deve permitir o acompanhamento em tempo real do inventário.  
 
-A interface de consulta deve ser intuitiva e oferecer a opção de exportação dos dados para relatórios em formatos como CSV ou PDF.
+### 📑 Detalhamento:
+- A interface de consulta deve ser intuitiva e oferecer a opção de exportação dos dados para relatórios em formatos como CSV ou PDF.
+- O sistema deve permitir a atualização automática do estoque após cada movimentação registrada.
+- O usuário deve ser capaz de consultar a quantidade disponível de cada item no inventário.
+- O sistema deve registrar a entrada e saída de produtos.
+- Deve ser possível visualizar um histórico detalhado de movimentações, com capacidade de filtragem por data, produto e tipo de operação (entrada/saída).
 
-O sistema deve permitir a atualização automática do estoque após cada movimentação registrada.
+**📌 Justificativa:** Permite a gestão eficiente do inventário, evitando perdas e otimizando o controle dos produtos disponíveis.  
+**🔺 Prioridade:** Alta  
 
-O usuário deve ser capaz de consultar a quantidade disponível de cada item no inventário.
+---
 
-O sistema deve registrar a entrada e saída de produtos.
+## 📋 Requisito 2: Alerta de Baixa de Estoque
+**🆔 ID:** REQ-002  
+**📝 Descrição:** O sistema deve emitir alertas automáticos quando o nível de estoque de qualquer produto atingir ou estiver abaixo de um valor mínimo definido.  
 
-Deve ser possível visualizar um histórico detalhado de movimentações, com capacidade de filtragem por data, produto e tipo de operação (entrada/saída).
-📌 Justificativa: Permite a gestão eficiente do inventário, evitando perdas e otimizando o controle dos produtos disponíveis.
-🔺 Prioridade: Alta
+### 📑 Detalhamento:
+- O sistema deve permitir a visualização de relatórios de produtos com estoque abaixo do mínimo, podendo ser filtrado por data e categoria.
+- O alerta também pode ser configurado para disparar quando a quantidade disponível de um produto alcançar níveis críticos ou for zero.
+- O sistema deve permitir que os responsáveis pela reposição de estoque possam facilmente visualizar os itens com baixo estoque e tomar as devidas providências.
+- O sistema deve permitir a configuração de valores mínimos de estoque por produto.
+- O alerta deve ser enviado por e-mail e/ou exibido dentro do sistema.
+- O sistema deve gerar relatórios com produtos que possuem estoque abaixo do mínimo definido.
 
-📋 Requisito 2: Alerta de Baixa de Estoque
-🆔 ID: REQ-002
-📝 Descrição: O sistema deve emitir alertas automáticos quando o nível de estoque de qualquer produto atingir ou estiver abaixo de um valor mínimo definido.
-📑 Detalhamento:
+**📌 Justificativa:** Garantir a reposição de produtos e evitar rupturas de estoque.  
+**🔺 Prioridade:** Média  
 
-O sistema deve permitir a visualização de relatórios de produtos com estoque abaixo do mínimo, podendo ser filtrado por data e categoria.
+---
 
-O alerta também pode ser configurado para disparar quando a quantidade disponível de um produto alcançar níveis críticos ou for zero.
+## 📋 Requisito 3: Cadastro de Produtos
+**🆔 ID:** REQ-003  
+**📝 Descrição:** O sistema deve possibilitar o cadastro, consulta, edição e exclusão de produtos.  
 
-O sistema deve permitir que os responsáveis pela reposição de estoque possam facilmente visualizar os itens com baixo estoque e tomar as devidas providências.
+### 📑 Detalhamento:
+- O sistema deve permitir a edição de qualquer dado do produto após o cadastro, mantendo histórico das modificações.
+- O sistema deve permitir a exclusão de produtos, mas com a devida confirmação e restrição se o produto já estiver associado a transações anteriores.
+- Deve ser possível realizar buscas rápidas por nome, código ou categoria.
+- O sistema deve permitir a importação em massa de produtos via arquivo CSV ou Excel.
 
-O sistema deve permitir a configuração de valores mínimos de estoque por produto.
+**📌 Informações obrigatórias no cadastro:**
+- Nome do produto.
+- Código do produto (SKU ou outro identificador único).
+- Descrição detalhada.
+- Preço de venda e de custo.
+- Unidade de medida (ex.: unidade, kg).
+- Categoria e/ou subcategoria.
+- Quantidade mínima em estoque para emissão de alerta de baixa.
 
-O alerta deve ser enviado por e-mail e/ou exibido dentro do sistema.
+**📌 Justificativa:** Facilitar a organização e gestão dos produtos, garantindo que todos os dados necessários estejam disponíveis e atualizados.  
+**🔺 Prioridade:** Média  
 
-O sistema deve gerar relatórios com produtos que possuem estoque abaixo do mínimo definido.
-📌 Justificativa: Garantir a reposição de produtos e evitar rupturas de estoque.
-🔺 Prioridade: Média
+---
 
-📋 Requisito 3: Cadastro de Produtos
-🆔 ID: REQ-003
-📝 Descrição: O sistema deve possibilitar o cadastro, consulta, edição e exclusão de produtos.
-📑 Detalhamento:
+## 📋 Requisito 4: Controle de Caixa
+**🆔 ID:** REQ-004  
+**📝 Descrição:** O sistema deve gerenciar as movimentações financeiras diárias.  
 
-O sistema deve permitir a edição de qualquer dado do produto após o cadastro, mantendo histórico das modificações.
+### 📑 Detalhamento:
+- O sistema deve permitir a visualização e edição das entradas e saídas financeiras.
+- O sistema deve permitir o acompanhamento do fluxo de caixa por período (diário, semanal, mensal).
+- Caso haja discrepância no fechamento do caixa, o sistema deve permitir o registro de um motivo.
+- Abertura de caixa com registro do valor inicial.
+- Registro de todas as entradas e saídas financeiras (ex.: vendas, devoluções, despesas).
+- Fechamento de caixa com cálculo automático do saldo final e geração de relatórios diários.
+- Suporte para diferentes formas de pagamento (dinheiro, cartão, etc.).
 
-O sistema deve permitir a exclusão de produtos, mas com a devida confirmação e restrição se o produto já estiver associado a transações anteriores.
+**📌 Justificativa:** Facilitar o controle financeiro diário, assegurando a precisão dos registros e o controle das finanças.  
+**🔺 Prioridade:** Alta  
 
-Deve ser possível realizar buscas rápidas por nome, código ou categoria.
+---
 
-O sistema deve permitir a importação em massa de produtos via arquivo CSV ou Excel.
+## 📋 Requisito 5: Emissão de Notas Fiscais
+**🆔 ID:** REQ-005  
+**📝 Descrição:** O sistema deve emitir notas fiscais eletrônicas (NF-e) conforme a legislação vigente.  
 
-As seguintes informações são obrigatórias no cadastro:
+### 📑 Detalhamento:
+- O sistema deve gerar NF-e para todas as vendas, garantindo que as informações da transação estejam corretas e de acordo com a legislação fiscal.
+- O sistema deve permitir a emissão de NF-e com diferentes tipos de operação (venda, devolução, remessa, etc.).
+- O sistema deve fornecer relatórios detalhados com histórico de todas as notas fiscais emitidas, com possibilidade de exportação.
+- O sistema deve integrar-se com plataformas de emissão de NF-e como SEFAZ para validação e envio automático.
+- O sistema deve permitir o cancelamento e correção de notas fiscais emitidas, com controle de registros de cada operação.
+- O sistema deve oferecer funcionalidades para consultar a situação da NF-e (em andamento, autorizada, cancelada, etc.).
 
-Nome do produto.
+**📌 Justificativa:** Garantir que o sistema esteja em conformidade com a legislação fiscal vigente e facilitar o processo de emissão de notas.  
+**🔺 Prioridade:** Média  
 
-Código do produto (SKU ou outro identificador único).
+---
 
-Descrição detalhada.
+## 📋 Requisito 6: Relatórios
+**🆔 ID:** REQ-006  
+**📝 Descrição:** O sistema precisa gerar relatórios para facilitar a análise de vendas e estoque.  
 
-Preço de venda e de custo.
+### 📑 Detalhamento:
+- **📌 Compras por Cliente:** Mostra quem comprou o quê, incluindo unidade, quantidade, valor unitário e total (como uma nota fiscal).
+- **📌 Vendas Mensais:** Lista todas as vendas do mês escolhido, organizadas por data.
+- **📌 Vendas por Produto:** Indica o desempenho de cada produto, mostrando quanto foi vendido e a receita gerada.
+- **📌 Top Vendas:** Destaca os produtos mais vendidos em um determinado período.
 
-Unidade de medida (ex.: unidade, kg).
+**📌 Justificativa:** Melhorar a tomada de decisão por meio de análises detalhadas de vendas e estoque.  
+**🔺 Prioridade:** Média  
 
-Categoria e/ou subcategoria.
+---
 
-Quantidade mínima em estoque para emissão de alerta de baixa.📌 Justificativa: Facilitar a organização e gestão dos produtos, garantindo que todos os dados necessários estejam disponíveis e atualizados.🔺 Prioridade: Média
+## 📋 Requisito 7: Gestão de Usuários
+**🆔 ID:** REQ-007  
+**📝 Descrição:** O sistema terá dois tipos de usuários com permissões diferentes.  
 
-📋 Requisito 4: Controle de Caixa
-🆔 ID: REQ-004📝 Descrição: O sistema deve gerenciar as movimentações financeiras diárias.📑 Detalhamento:
+### 📑 Detalhamento:
+- **👨‍💼 Administrador:**
+  - Acesso total ao sistema.
+  - Pode visualizar e gerar todos os relatórios.
+  - Gerencia usuários e permissões.
+  - Controle financeiro.
+- **👨‍🔧 Funcionário:**
+  - Acesso limitado.
+  - Gerencia o estoque.
+  - Pode acessar apenas relatórios relacionados a produtos e estoque.
 
-O sistema deve permitir a visualização e edição das entradas e saídas financeiras.
-
-O sistema deve permitir o acompanhamento do fluxo de caixa por período (diário, semanal, mensal).
-
-Caso haja discrepância no fechamento do caixa, o sistema deve permitir o registro de um motivo.
-
-Abertura de caixa com registro do valor inicial.
-
-Registro de todas as entradas e saídas financeiras (ex.: vendas, devoluções, despesas).
-
-Fechamento de caixa com cálculo automático do saldo final e geração de relatórios diários.
-
-Suporte para diferentes formas de pagamento (dinheiro, cartão, etc.).📌 Justificativa: Facilitar o controle financeiro diário, assegurando a precisão dos registros e o controle das finanças.🔺 Prioridade: Alta
-
-📋 Requisito 5: Emissão de Notas Fiscais
-🆔 ID: REQ-005📝 Descrição: O sistema deve emitir notas fiscais eletrônicas (NF-e) conforme a legislação vigente.📑 Detalhamento:
-
-O sistema deve gerar NF-e para todas as vendas, garantindo que as informações da transação estejam corretas e de acordo com a legislação fiscal.
-
-O sistema deve permitir a emissão de NF-e com diferentes tipos de operação (venda, devolução, remessa, etc.).
-
-O sistema deve fornecer relatórios detalhados com histórico de todas as notas fiscais emitidas, com possibilidade de exportação.
-
-O sistema deve integrar-se com plataformas de emissão de NF-e como SEFAZ para validação e envio automático.
-
-O sistema deve permitir o cancelamento e correção de notas fiscais emitidas, com controle de registros de cada operação.
-
-O sistema deve oferecer funcionalidades para consultar a situação da NF-e (em andamento, autorizada, cancelada, etc.).📌 Justificativa: Garantir que o sistema esteja em conformidade com a legislação fiscal vigente e facilitar o processo de emissão de notas.🔺 Prioridade: Média
-
-📋 Requisito 6: Relatórios
-🆔 ID: REQ-006📝 Descrição: O sistema precisa gerar relatórios para facilitar a análise de vendas e estoque.📑 Detalhamento:
-
-Compras por Cliente: Mostra quem comprou o quê, incluindo unidade, quantidade, valor unitário e total (como uma nota fiscal).
-
-Vendas Mensais: Lista todas as vendas do mês escolhido, organizadas por data.
-
-Vendas por Produto: Indica o desempenho de cada produto, mostrando quanto foi vendido e a receita gerada.
-
-Top Vendas: Destaca os produtos mais vendidos em um determinado período.📌 Justificativa: Melhorar a tomada de decisão por meio de análises detalhadas de vendas e estoque.🔺 Prioridade: Média
-
-📋 Requisito 7: Gestão de Usuários
-🆔 ID: REQ-007📝 Descrição: O sistema terá dois tipos de usuários com permissões diferentes.📑 Detalhamento:
-
-Administrador:
-
-Acesso total ao sistema.
-
-Pode visualizar e gerar todos os relatórios.
-
-Gerencia usuários e permissões.
-
-Controle financeiro.
-
-Funcionário:
-
-Acesso limitado.
-
-Gerencia o estoque.
-
-Pode acessar apenas relatórios relacionados a produtos e estoque.📌 Justificativa: Controlar o acesso às informações e funcionalidades conforme a necessidade de cada usuário.🔺 Prioridade: Alta
-
-  
+**📌 Justificativa:** Controlar o acesso às informações e funcionalidades conforme a necessidade de cada usuário.  
+**🔺 Prioridade:** Alta
 
 ---
 
