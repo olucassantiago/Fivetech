@@ -24,7 +24,7 @@ Atualmente, a Choco Arte não conta com um sistema digital para gestão de venda
 
 ## :mag: Why?
 ### :people_holding_hands: Quem utilizará o sistema?
-O sistema será utilizado exclusivamente pelos proprietários da Chocoarte, não sendo acessado diretamente pelos clientes.
+O sistema será utilizado exclusivamente pelos proprietários da Chocoarte e os funcionários, não sendo acessado diretamente pelos clientes.
 
 #### :mag: Quais seriam os problemas?
 Como a gestão das vendas e do estoque dos produtos acontece de forma manual, o controle das entradas e saídas fica dificultado, tornando o processo de gestão da empresa mais moroso e aumentando a possibilidade de erros.
@@ -55,6 +55,8 @@ Em reunião com o cliente, identificamos as principais necessidades que o sistem
 - Cadastro de produtos;
 - Controle de caixa (fechamento de caixa, dentre outros);
 - Emissão de notas.
+- Gerador de relatórios 
+- Gestão de usuários
 
 ---
 
