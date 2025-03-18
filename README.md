@@ -69,11 +69,20 @@ Em reunião com o cliente, identificamos as principais necessidades que o sistem
 **📝 Descrição:** O sistema deve permitir o acompanhamento em tempo real do inventário.  
 
 ### 📑 Detalhamento:
-- A interface de consulta deve ser intuitiva e oferecer a opção de exportação dos dados para relatórios em formatos como CSV ou PDF.
+- A interface de consulta deve ser clara e oferecer a opção de exportação dos dados para relatórios em formatos como CSV ou PDF.
+   - O usuário pode acessar a interface de consulta de estoque e, após aplicar os filtros desejados (como produto ou data), gerar relatórios de movimentações. O sistema oferece as opções de exportação para CSV e PDF para facilitar a análise.
+
 - O sistema deve permitir a atualização automática do estoque após cada movimentação registrada.
+    - Sempre que uma entrada ou saída de produto for registrada no sistema, a quantidade de unidades no estoque é automaticamente ajustada para refletir a movimentação, garantindo que o inventário esteja sempre atualizado.
+
 - O usuário deve ser capaz de consultar a quantidade disponível de cada item no inventário.
+    - A consulta é feita diretamente na interface do sistema, onde o usuário pode ver o saldo atual de qualquer item, sem a necessidade de realizar cálculos manuais. A consulta pode ser filtrada por nome do produto, código ou categoria.
+
 - O sistema deve registrar a entrada e saída de produtos.
+    - O sistema permite ao usuário registrar as movimentações de entrada (como compras) e de saída (como vendas ou retiradas), ajustando automaticamente o estoque e criando um histórico de todas as movimentações para referência futura.
+
 - Deve ser possível visualizar um histórico detalhado de movimentações, com capacidade de filtragem por data, produto e tipo de operação (entrada/saída).
+    - O histórico de movimentações é armazenado no sistema e pode ser consultado com filtros para facilitar a busca por transações específicas. O usuário pode visualizar detalhes sobre cada movimentação, como data, quantidade e tipo de operação.
 
 **📌 Justificativa:** Permite a gestão eficiente do inventário, evitando perdas e otimizando o controle dos produtos disponíveis.  
 **🔺 Prioridade:** Alta  
