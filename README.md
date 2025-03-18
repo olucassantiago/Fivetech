@@ -2,7 +2,7 @@
 
 ![Logo ChocoArte](https://github.com/user-attachments/assets/8d7811ce-1830-4f3f-9342-89459bcb6ac8) 
 
-Figura 1 - Logo Choco Art
+Figura 1 - Logo Choco Arte
 
 ---
 
