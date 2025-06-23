@@ -219,6 +219,29 @@ Deve ser possível visualizar um histórico detalhado de todas as movimentaçõe
 
 ---
 
+## :gear: Diagramas
+### Diagrama de Classes
+Esse diagrama foi modelado utilizando os princípios da Programação Orientada a Objetos (POO) e tem como objetivo organizar e estruturar os principais componentes do sistema.
+![Diagrama de Classe](https://github.com/user-attachments/assets/be55a056-374c-4654-ae6e-93c58a26190c)
+
+### Digrama de Sequência
+Este diagrama ilustra o fluxo de interação entre os componentes do sistema durante uma movimentação de estoque e vendas. Ele segue a lógica de uma arquitetura orientada a eventos e demonstra claramente os pontos de integração com sistemas externos, como a SEFAZ (integração futura).
+
+![Diagrama de Colaboração](https://github.com/user-attachments/assets/588b3fb5-525a-4b5a-8f74-e67f81c1460c)
+
+### Diagrama de Estado
+Este Diagrama de Estados descreve o fluxo de transições entre os diversos estados que os módulos do sistema podem assumir ao longo de seu funcionamento. Ele é essencial para compreender como o sistema reage a eventos internos e externos, permitindo um controle mais robusto e previsível da lógica de negócio.
+
+![Diagrama de Estado_](https://github.com/user-attachments/assets/0656d26d-9424-48ff-9975-1e7bd102f08f)
+
+### Diagrama de Atividade
+
+O Diagrama de Atividade apresentado descreve o fluxo funcional do processo de cadastro de produtos no sistema, abrangendo tanto o cadastro manual quanto a importação em lote via arquivos CSV/Excel. Esse diagrama é essencial para visualizar as etapas, decisões e validações envolvidas nesse processo.
+
+![Diagrama de Atividade_](https://github.com/user-attachments/assets/a9e07616-52ae-498a-b8ff-26ae4b200b4f)
+
+
+
 ## 🖌️ Projeto Conceitual e Especificação do Design
 
 ![Logo ChocoArte](https://github.com/user-attachments/assets/8d7811ce-1830-4f3f-9342-89459bcb6ac8)<br>Figura 4 - Logo da Choco Arte
