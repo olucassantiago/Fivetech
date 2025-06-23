@@ -220,6 +220,12 @@ Deve ser possível visualizar um histórico detalhado de todas as movimentaçõe
 ---
 
 ## :gear: Diagramas
+
+### Diagrama de Casos de Uso
+Este Diagrama de Casos de Uso representa as principais interações entre os atores (usuários e sistemas externos) e o sistema central responsável pela gestão de produtos, vendas, estoque e relatórios.
+
+![Caso de Uso](https://github.com/user-attachments/assets/45e6d6e1-395c-4e1f-ab7c-b975e9da00f7)
+
 ### Diagrama de Classes
 Esse diagrama foi modelado utilizando os princípios da Programação Orientada a Objetos (POO) e tem como objetivo organizar e estruturar os principais componentes do sistema.
 ![Diagrama de Classe](https://github.com/user-attachments/assets/be55a056-374c-4654-ae6e-93c58a26190c)
@@ -235,7 +241,6 @@ Este Diagrama de Estados descreve o fluxo de transições entre os diversos esta
 ![Diagrama de Estado_](https://github.com/user-attachments/assets/0656d26d-9424-48ff-9975-1e7bd102f08f)
 
 ### Diagrama de Atividade
-
 O Diagrama de Atividade apresentado descreve o fluxo funcional do processo de cadastro de produtos no sistema, abrangendo tanto o cadastro manual quanto a importação em lote via arquivos CSV/Excel. Esse diagrama é essencial para visualizar as etapas, decisões e validações envolvidas nesse processo.
 
 ![Diagrama de Atividade_](https://github.com/user-attachments/assets/a9e07616-52ae-498a-b8ff-26ae4b200b4f)
