@@ -245,9 +245,8 @@ As cores da nossa identidade traduzem nossa essência tecnológica: o azul vibra
 
 ## 🎨 Prototipação
 
-Após a criação do Wireframe, a prototipação foi realizada em nível de média e alta fidelidade. Para acessar, clique nos links a seguir: 
+Após a criação do Wireframe, a prototipação foi realizada em nível de alta fidelidade. Para acessar, clique nos links a seguir: 
 
-[Acesse a Média Fidelidade](https://drive.google.com/drive/folders/1R7iomUwCCo-xgGR7TqfGvp42g4ixE5XH?usp=sharing)
 
 
 [Acesse a Alta Fidelidade](https://drive.google.com/drive/folders/1Ch30sAlym5JltQhhMdMmgWLuFLfm07RR?usp=sharing)
