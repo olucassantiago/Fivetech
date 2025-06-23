@@ -37,7 +37,7 @@ Em um dia típico na vida de Arthur, um jovem de 22 anos, da cidade de Teixeiras
 ---
 
 ## :busts_in_silhouette: Who - Análise dos Stakeholders
-### :busts_in_silhouette: Who - Análise dos Stakeholders
+### :busts_in_silhouette: Análise dos Stakeholders
 ![Análise de Stakeholders](https://github.com/user-attachments/assets/b59f0448-b684-42f4-b3e9-fc35d4109adf)
 
 ### :bust_in_silhouette: Persona
