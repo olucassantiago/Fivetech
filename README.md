@@ -287,8 +287,8 @@ O desenvolvimento deste projeto foi ampliado com a inclusão de mais dois membro
 
 | Nome                                      | Curso                             | LinkedIn                                                   | GitHub                           |
 | ----------------------------------------- | --------------------------------- | ---------------------------------------------------------- | -------------------------------- |
-| <p align="center"> <img src="https://github.com/user-attachments/assets/abb672e5-32cb-440e-a327-366f2666f59c" alt="Samuel" width="150">  </p> <p align="center"> Samuel Souza </p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Samuel Souza](https://www.linkedin.com/in/samuel-souza-4aa3b9338/) | <p align="center"> [Acesse o Github de Samuel](https://github.com/samuelsouza10)|
-| <p align="center"> <img src="https://github.com/user-attachments/assets/6a4ce95c-4096-4a9e-9293-47b089e48977" alt="Sérgio Dias" width="150"></p> <p align="center">Sérgio Dias</p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Sérgio Dias](https://www.linkedin.com/in/sergio-augusto-dias-65024729a) | <p align="center"> [Acesse o Github de Sérgio](https://github.com/Sergiodias130) |
+| <p align="center"> <img src="https://avatars.githubusercontent.com/u/184315558?v=4" alt="Elias" width="150">  </p> <p align="center">Elias </p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Elias]() | <p align="center"> [Acesse o Github de Elias](https://github.com/Elias-7777)|
+| <p align="center"> <img src="https://avatars.githubusercontent.com/u/107133741?v=4" alt="Jorge Cardoso" width="150"></p> <p align="center">Jorge Cardoso </p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Jorge Cardoso](https://www.linkedin.com/in/jorgelfcardoso/) | <p align="center"> [Acesse o Github de Jorge](https://github.com/jorgefcardoso) |
 
 ## 📑 Estrutura da Equipe
 - Organização dos times e responsabilidades
