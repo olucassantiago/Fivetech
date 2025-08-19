@@ -30,7 +30,9 @@ O sistema será utilizado exclusivamente pelos proprietários da Choco Arte e os
 Como a gestão das vendas e do estoque dos produtos acontece de forma manual, o controle das entradas e saídas fica dificultado, tornando o processo de gestão da empresa mais moroso e aumentando a possibilidade de erros.
 
 ### :book: Storytelling
-Em um dia típico na vida de Arthur, um jovem de 22 anos, da cidade de Teixeiras – MG, que estuda Análise e Desenvolvimento de Sistemas, o equilíbrio entre suas atividades diárias era um desafio constante. Além dos estudos, Raphael dedicava seu tempo à sua pequena empresa de doces, conciliando isso com sua paixão por esportes e lazer com a família, a namorada e os amigos, especialmente durante os jogos de vôlei nos finais de semana.
+Em um dia típico na vida de Arthur, um jovem de 23 anos residente em Teixeiras – MG, a busca pelo equilíbrio entre suas diversas atividades diárias se apresenta como um desafio constante. Estudante de Análise e Desenvolvimento de Sistemas, Arthur não apenas se dedica aos estudos, mas também investe seu tempo em sua pequena empresa de doces, onde aplica suas habilidades empreendedoras.
+
+Além de sua jornada acadêmica e profissional, Arthur valoriza momentos de lazer e convivência com a família, a namorada e os amigos. Os finais de semana são especialmente significativos, pois ele se entrega à sua paixão por esportes, participando de animados jogos de vôlei. Essa combinação de responsabilidades e prazeres reflete sua determinação em alcançar o sucesso, tanto nos estudos quanto nos negócios, enquanto mantém uma vida social ativa e gratificante.
 
 [História completa do Storytelling...]
 
@@ -52,13 +54,23 @@ Em um dia típico na vida de Arthur, um jovem de 22 anos, da cidade de Teixeiras
 
 ## :memo: Elicitação de Requisitos
 
-Em reunião com o cliente, identificamos as principais necessidades que o sistema deverá atender. Elas incluem:
+Durante a reunião com o cliente, foram identificadas as principais necessidades que o sistema deve atender, organizadas nas seguintes categorias:
 - Controle de estoque;
-- Alerta de baixa estoque;
-- Cadastro de produtos;
-- Controle de caixa (fechamento de caixa, dentre outros);
-- Emissão de notas.
-- Gerador de relatórios 
+  Alerta de baixa de estoque;
+  Cadastro de produtos, incluindo um campo para o código EAN (código de barras).
+- Controle Financeiro;
+  Controle de caixa, abrangendo o fechamento de caixa e outras funcionalidades;
+  Emissão de notas fiscais.
+- Gestão de Perdas;
+  Funcionalidade para registrar perdas de produtos devido a vencimento, mofo e deterioração.
+- Gerador de relatórios;
+  Relatórios de produtos produzidos, incluindo entradas e saídas;
+  Relatórios de vendas, com opções de filtragem por produto, período e forma de pagamento;
+  Relatórios financeiros, apresentando a relação entre receita e despesas (lucro) e a análise de produção, vendas e quebras (margem de lucro).
+- Dashboard;
+  Dashboard com opções personalizáveis de gráficos, incluindo gráficos de linha, coluna e barra.
+- Consulta de Notas Fiscais;
+  Tela para consulta de notas fiscais de vendas, com filtros disponíveis como CPF do cliente, número da nota fiscal e período. 
 - Gestão de usuários
 
 ---
@@ -68,159 +80,123 @@ Em reunião com o cliente, identificamos as principais necessidades que o sistem
 # 📋 Requisitos do Sistema
 
 # 📋 Requisito 1: Controle de Estoque
- - 🆔 ID: REQ-001
- - 📝 Descrição: O sistema deve permitir o acompanhamento em tempo real do estoque.
- - 📑 Detalhamento:
+🆔 ID: REQ-001
 
-A interface de consulta deve ser intuitiva e oferecer a opção de exportação dos dados para relatórios em formatos como CSV ou PDF.
-O sistema deve permitir a atualização automática do estoque após cada movimentação registrada.
-O usuário deve ser capaz de consultar a quantidade disponível de cada item existente no estoque.  
-O sistema deve exibir todas as movimentações dos produtos (entradas e saídas).
-Deve ser possível visualizar um histórico detalhado de movimentações, com capacidade de filtragem por data, produto e tipo de operação (entrada/saída).
-- 📌 Justificativa: Permite a gestão eficiente do estoque, evitando perdas e otimizando o controle dos produtos disponíveis.
-- 🔺 Prioridade: Alta
+📝 Descrição: O sistema deve permitir o acompanhamento em tempo real do estoque, garantindo uma gestão eficiente e precisa dos produtos disponíveis.
 
----
+📑 Detalhamento:
 
-# 📋 Requisito 2: Alerta de Baixa de Estoque
-- 🆔 ID: REQ-002
-- 📝 Descrição: O sistema deve emitir alertas automáticos quando o nível de estoque de qualquer produto atingir ou estiver abaixo de um valor mínimo definido.
-
-- 📑 Detalhamento:
-O sistema deve permitir a visualização de relatórios de produtos com estoque baixo, podendo ser filtrado por data e categoria.
-
-
-O alerta também pode ser configurado para ser exibido de 1 em 1 hora quando a quantidade disponível de um produto alcançar quantidade inferior à estabelecida ou zero.
-O sistema deve permitir gerar um relatório dos itens com estoque baixo para que os responsáveis pela reposição de estoque possam facilmente visualizar os itens e tomar as devidas providências.
-O sistema deve permitir a configuração de valores mínimos de estoque por produto.
-O alerta deve ser enviado por e-mail e/ou exibido dentro do sistema.
-
-
-- 📌 Justificativa: Garantir a reposição de produtos e evitar rupturas de estoque.
-- 🔺 Prioridade: Média
+- O sistema deve incluir funcionalidades para controle de estoque, alertando automaticamente quando os níveis de produtos atingirem um limite mínimo.
+- O cadastro de produtos deve ser facilitado, incluindo um campo específico para o código EAN (código de barras), permitindo uma identificação única e rápida dos itens.
+- A interface de consulta deve ser intuitiva e oferecer a opção de exportação dos dados para relatórios em formatos como CSV ou PDF.
+- O sistema deve permitir a atualização automática do estoque após cada movimentação registrada, garantindo que as informações estejam sempre atualizadas.
+- O usuário deve ser capaz de consultar a quantidade disponível de cada item existente no estoque, além de visualizar todas as movimentações dos produtos (entradas e saídas).
+- Deve ser possível acessar um histórico detalhado de movimentações, com capacidade de filtragem por data, produto e tipo de operação (entrada/saída).
+📌 Justificativa: Essa abordagem permite uma gestão eficiente do estoque, evitando perdas e otimizando o controle dos produtos disponíveis, além de facilitar o cadastro e a identificação dos itens.
+🔺 Prioridade: Alta
 
 ---
 
-# 📋 Requisito 3: Cadastro de Produtos
-- 🆔 ID: REQ-003
-- 📝 Descrição: O sistema deve possibilitar o cadastro, consulta, edição e exclusão de produtos.
+# 📋 Requisito 2: Controle Financeiro
+🆔 ID: REQ-002
 
+📝 Descrição: O sistema deve gerenciar o controle financeiro, abrangendo funcionalidades de controle de caixa, fechamento de caixa e emissão de notas fiscais.
 
-- 📑 Detalhamento:
+📑 Detalhamento:
 
-O sistema deve permitir a edição de qualquer dado do produto após o cadastro, mantendo histórico das modificações.
-
-O sistema deve permitir a exclusão de produtos, mas com a devida confirmação e restrição se o produto já estiver associado a transações anteriores.
-
-Deve ser possível realizar buscas rápidas por nome, código ou categoria.
-
-O sistema deve permitir a importação em massa de produtos via arquivo CSV ou Excel.
-
-As seguintes informações são obrigatórias no cadastro de produto:
-Nome do produto.
-Código do produto (SKU ou outro identificador único).
-Descrição detalhada.
-Preço de venda e de custo.
-Unidade de medida (ex.: unidade, kg e pacote).
-Categoria e/ou subcategoria.
-Quantidade mínima em estoque para emissão de alerta de baixa.
-- 📌 Justificativa: Facilitar a organização e gestão dos produtos, garantindo que todos os dados necessários estejam disponíveis e atualizados.
-- 🔺 Prioridade: Média
+- O sistema deve permitir o registro e a visualização das movimentações financeiras diárias, incluindo entradas e saídas de caixa.
+- O controle de caixa deve incluir funcionalidades para o fechamento de caixa, permitindo que os usuários registrem o valor inicial, calculem o saldo final e gerem relatórios diários.
+- O sistema deve suportar diferentes formas de pagamento (dinheiro, cartão, pix, etc.), garantindo flexibilidade nas transações.
+- A emissão de notas fiscais deve ser integrada ao sistema, permitindo que todas as vendas sejam registradas de acordo com a legislação vigente, com a possibilidade de gerar relatórios detalhados sobre as notas emitidas.
+- O sistema deve permitir a configuração de alertas para discrepâncias no fechamento do caixa, possibilitando o registro de motivos para qualquer diferença encontrada.
+📌 Justificativa: Essa abordagem assegura um controle financeiro eficiente, facilitando a gestão das receitas e despesas, além de garantir a conformidade com as obrigações fiscais.
+🔺 Prioridade: Alta
 
 ---
 
-# 📋 Requisito 4: Controle de Caixa
-- 🆔 ID: REQ-004
-- 📝 Descrição: O sistema deve gerenciar as movimentações financeiras diárias.
-- 📑 Detalhamento:
+# 📋 Requisito 3: Gestão de Perdas
+🆔 ID: REQ-003
 
-O sistema deve permitir a visualização e edição das entradas e saídas financeiras.
+📝 Descrição: O sistema deve incluir uma funcionalidade para registrar e gerenciar perdas de produtos, abrangendo situações como vencimento, mofo e deterioração.
 
-O sistema deve permitir o acompanhamento do fluxo de caixa por período (diário, semanal, mensal).
+📑 Detalhamento:
 
-Caso haja discrepância no fechamento do caixa, o sistema deve permitir o registro de um motivo.
-Abertura de caixa com registro do valor inicial.
-Fechamento de caixa com cálculo automático do saldo final e geração de relatórios diários.
-Suporte para diferentes formas de pagamento (dinheiro, cartão, pix e etc.).
-
-- 📌 Justificativa: Facilitar o controle financeiro diário, assegurando a precisão dos registros de vendas e o controle das finanças.
-- 🔺 Prioridade: Alta
+- O sistema deve permitir o registro detalhado de perdas de produtos, especificando a causa da perda (vencimento, mofo, deterioração, etc.) e a quantidade afetada.
+- A interface deve ser intuitiva, facilitando a entrada de dados e a consulta das perdas registradas.
+- O sistema deve gerar relatórios sobre as perdas, permitindo que os usuários visualizem as informações por período, tipo de produto e causa da perda.
+- Deve ser possível configurar alertas para notificar os responsáveis sobre produtos próximos ao vencimento ou em condições inadequadas de armazenamento, ajudando a prevenir perdas futuras.
+- O registro de perdas deve ser integrado ao controle de estoque, garantindo que as quantidades disponíveis sejam atualizadas automaticamente após o lançamento das perdas.
+📌 Justificativa: A gestão eficaz das perdas é fundamental para minimizar desperdícios, otimizar o controle de estoque e garantir a qualidade dos produtos oferecidos.
+🔺 Prioridade: Média
 
 ---
 
-# 📋 Requisito 5: Emissão de Notas Fiscais
-- 🆔 ID: REQ-005
-- 📝 Descrição: O sistema deve emitir notas fiscais eletrônicas (NF-e) conforme a legislação vigente.
-- 📑 Detalhamento:
+# 📋 Requisito 4: Emissão e Consulta de Notas Fiscais
+🆔 ID: REQ-004
 
-O sistema deve gerar NF-e para todas as vendas, garantindo que as informações da transação estejam corretas e de acordo com a legislação fiscal.
-O sistema deve permitir a emissão de NF-e com diferentes tipos de operação (venda, devolução, remessa, etc.).
-O sistema deve fornecer relatórios detalhados com histórico de todas as notas fiscais emitidas, com possibilidade de exportação em documento excel ou CSV.
-O sistema deve integrar-se com plataformas de emissão de NF-e com o SEFAZ para validação e envio automático.
-O sistema deve permitir o cancelamento e correção de notas fiscais emitidas, com controle de registros de cada operação.
-O sistema deve oferecer funcionalidades para consultar a situação da NF-e (em andamento, autorizada, cancelada, etc.).
-Geração de NF-e para vendas.
-Geração de relatórios de notas emitidas.
-Integração com sistemas de emissão de nota fiscal eletrônica (ex.: SEFAZ).
-Possibilidade de cancelamento e correção de notas fiscais emitidas.
+📝 Descrição: O sistema deve permitir a emissão de notas fiscais eletrônicas (NF-e) e incluir uma tela para consulta de notas fiscais de vendas, com filtros disponíveis para facilitar a busca.
 
+📑 Detalhamento:
 
-- 📌 Justificativa: Garantir que o sistema esteja em conformidade com a legislação fiscal vigente e facilitar o processo de emissão de notas.
-- 🔺 Prioridade: Alta
+- O sistema deve gerar NF-e para todas as vendas, assegurando que as informações estejam corretas e em conformidade com a legislação fiscal vigente.
+- A emissão de notas deve incluir diferentes tipos de operação, como venda, devolução e remessa, garantindo flexibilidade nas transações.
+- Deve ser disponibilizada uma tela específica para consulta de notas fiscais emitidas, permitindo que os usuários busquem informações utilizando filtros como CPF do cliente, número da nota fiscal e período.
+- O sistema deve possibilitar a exportação de relatórios detalhados sobre as notas fiscais emitidas, com a opção de exportação em formatos como CSV ou PDF.
+- A consulta deve incluir a possibilidade de visualizar a situação da NF-e (em andamento, autorizada, cancelada, etc.), proporcionando transparência e controle sobre as transações.
+📌 Justificativa: A funcionalidade de emissão e consulta de notas fiscais é essencial para garantir a conformidade fiscal, facilitar o acesso às informações e otimizar o processo de vendas.
+🔺 Prioridade: Alta
 
 ---
 
-# 📋 Requisito 6: Relatórios
-- 🆔 ID: REQ-006
-- 📝 Descrição: O sistema deve ser capaz de emitir relatórios de vendas e controle de estoque.
-- 📑 Detalhamento:
-Registro de todas as entradas e saídas financeiras (ex.: vendas, devoluções, despesas, compras e etc.).
-Possibilidade de filtrar os relatórios de vendas e notas fiscais de estoque por:	
-Produto;
-Data;
-Estoque; 
-Cliente; 
-Fornecedor;
-O relatório deve permitir a exportação em CSV e PDF.
-- 📌 Justificativa: Garantir que o sistema esteja em conformidade com a legislação fiscal vigente e facilitar o processo de emissão de relatórios e consulta de dados.
-- 🔺 Prioridade: Alta
+# 📋 Requisito 5: Gerador de Relatórios
+🆔 ID: REQ-005
+
+📝 Descrição: O sistema deve incluir um gerador de relatórios abrangente, permitindo a criação de relatórios detalhados sobre produtos, vendas e aspectos financeiros.
+
+📑 Detalhamento:
+
+- O gerador de relatórios deve permitir a criação de relatórios de produtos produzidos, incluindo informações sobre entradas e saídas, facilitando o acompanhamento da movimentação de estoque.
+- Deve ser possível gerar relatórios de vendas, com opções de filtragem por produto, período e forma de pagamento, permitindo uma análise detalhada do desempenho das vendas.
+- O sistema deve oferecer relatórios financeiros que apresentem a relação entre receita e despesas, possibilitando o cálculo do lucro. Além disso, deve incluir análises sobre produção, vendas e quebras, permitindo a avaliação da margem de lucro.
+- Os relatórios devem ser exportáveis em formatos como CSV e PDF, garantindo que os usuários possam compartilhar e analisar os dados de forma eficiente.
+- O sistema deve permitir a programação de relatórios periódicos, que podem ser gerados automaticamente em intervalos definidos, facilitando o acompanhamento contínuo das métricas de desempenho.
+📌 Justificativa: A capacidade de gerar relatórios detalhados é fundamental para a tomada de decisões informadas, permitindo que a empresa monitore seu desempenho e identifique oportunidades de melhoria.
+🔺 Prioridade: Alta
 
 ---
 
-# 📋 Requisito 7: Usuários
-- 🆔 ID: REQ-007
-- 📝 Descrição: O sistema deve permitir o cadastro de usuários e a gestão em níveis de acessos hierárquicos. 
+# 📋 Requisito 6: Dashboard Personalizável
+🆔 ID: REQ-006
 
-- 📑 Detalhamento:
-O sistema deve permitir o cadastro de usuários com regras de controle de acesso ao sistema e cada usuário deve ter um ID de identificação.
-Usuário Administrador 
-- Deve ter acesso a todas as telas existentes no sistema. 
-- Deve ter a permissão para realizar qualquer ação dentro do sistema.
+📝 Descrição: O sistema deve incluir um dashboard interativo e personalizável, permitindo a visualização de dados por meio de diferentes tipos de gráficos.
 
+📑 Detalhamento:
 
-Usuário Funcionário
-- Deve ter restrições de acesso às telas do sistema. 
-- O usuário deve ter acesso somente as telas necessárias para a realização de suas tarefas.
+- O dashboard deve oferecer opções personalizáveis de visualização, permitindo que os usuários escolham entre gráficos de linha, coluna e barra, conforme suas preferências e necessidades de análise.
+- Os usuários devem ter a capacidade de selecionar quais métricas e dados desejam visualizar no dashboard, como vendas, estoque, perdas e desempenho financeiro.
+- O sistema deve permitir a configuração de filtros para que os usuários possam ajustar a visualização dos dados por período, categoria de produto e outras variáveis relevantes.
+- O dashboard deve ser atualizado em tempo real, refletindo as informações mais recentes do sistema, garantindo que os usuários tenham acesso a dados atualizados para a tomada de decisões.
+- Deve ser possível salvar e compartilhar configurações de dashboard personalizadas, permitindo que diferentes usuários tenham acesso a visualizações que atendam às suas necessidades específicas.
+📌 Justificativa: Um dashboard personalizável proporciona uma visão clara e rápida das métricas mais importantes, facilitando a análise de dados e a tomada de decisões estratégicas.
+🔺 Prioridade: Alta
+---
 
-- 📌 Justificativa: Garantir a segurança e organização do sistema, obter controle sobre as ações realizadas dentro do sistema.
-- 🔺 Prioridade: Média
+# 📋 Requisito 7: Gestão de Usuários
+🆔 ID: REQ-007
 
+📝 Descrição: O sistema deve incluir uma funcionalidade robusta para a gestão de usuários, permitindo o controle de acesso e a administração de permissões.
+
+📑 Detalhamento:
+
+- O sistema deve permitir o cadastro de novos usuários, incluindo informações como nome, e-mail, cargo e nível de acesso.
+- Deve ser possível definir diferentes níveis de permissão para os usuários, garantindo que cada um tenha acesso apenas às funcionalidades necessárias para suas funções.
+- A interface de gestão de usuários deve ser intuitiva, permitindo a fácil visualização e edição das informações dos usuários cadastrados.
+- O sistema deve incluir funcionalidades para a recuperação de senhas e a configuração de autenticação de dois fatores, aumentando a segurança no acesso.
+- Deve ser possível gerar relatórios sobre a atividade dos usuários, permitindo o monitoramento de acessos e ações realizadas dentro do sistema.
+- O sistema deve permitir a desativação ou exclusão de usuários, garantindo que o acesso seja controlado de forma eficaz.
+📌 Justificativa: A gestão de usuários é essencial para garantir a segurança e a integridade do sistema, permitindo um controle adequado sobre quem pode acessar e modificar informações sensíveis.
+🔺 Prioridade: Alta
  ---
- 
-# 📋 Requisito 8: Processo de Inventário
-- 🆔 ID: REQ-008
-- 📝 Descrição: O sistema deve permitir a abertura de inventários cíclicos e configurações personalizadas para cada tipo de produto a ser inventariado.
-- 📑 Detalhamento:
-
-O sistema deve permitir a abertura de inventário a ser realizado, personalizado por grupo de produtos e/ou local de estoque.
-O sistema deve permitir a coleta e lançamento do código e quantidade dos produtos que estão sendo inventariados.
-O sistema deve permitir a visualização do inventário de forma clara e detalhada.  
-O sistema deve permitir que após a análise do inventário, o usuário possa fazer o acerto de estoque, lançando perdas ou entradas de produtos com o motivo “Acerto de estoque por processo de inventário”.
-Deve ser possível visualizar um histórico detalhado de todas as movimentações, com capacidade de filtragem por data, produto e tipo de operação (entrada/saída).
-- 📌 Justificativa: Permite a gestão eficiente do estoque, análise das movimentações dos produtos e, além disso, identificar as perdas e/ou entrada de produtos .
-- 🔺 Prioridade: Média
-
----
 
 ## :gear: Diagramas
 
@@ -284,7 +260,7 @@ Após a criação do Wireframe, a prototipação foi realizada em nível de alta
 
 ---
 
-## ✅ Conclusão
+## ✅ Conclusão do Protótipo 
 
 Com a conclusão deste projeto, encerramos o desenvolvimento do protótipo do sistema de gestão de vendas e controle de estoque para a ChocoArte, sob a orientação da professora Cristiane Aparecida Lana. Este trabalho teve como objetivo criar uma solução personalizada para a Choco Arte, uma empresa que precisava modernizar seus processos operacionais. A FiveTech, ao longo deste projeto, teve a oportunidade de aplicar seu conhecimento em desenvolvimento de software, focando na otimização de processos e criando um protótipo funcional que atendesse às necessidades da empresa.
 
@@ -293,8 +269,6 @@ Durante a execução do projeto, houve uma integração entre as diversas etapas
 Este projeto reflete o compromisso da FiveTech com inovação, qualidade e eficiência, além de consolidar seu papel como parceira estratégica no mercado de soluções digitais. A orientação da professora Cristiane Aparecida Lana foi fundamental para o sucesso da iniciativa, com seu apoio e direcionamento, conseguimos alcançar nossos objetivos e entregar uma solução tecnológica que, com certeza, fará a diferença para a Choco Arte.
 
 A primeira versão deste projeto foi desenvolvido pelos alunos:
-
-
 
 | Nome                                      | Curso                             | LinkedIn                                                   | GitHub                           |
 | ----------------------------------------- | --------------------------------- | ---------------------------------------------------------- | -------------------------------- |
@@ -305,3 +279,23 @@ A primeira versão deste projeto foi desenvolvido pelos alunos:
 | <p align="center"> <img src="https://github.com/user-attachments/assets/14e36e06-1bfd-4942-992f-54c22697def5" alt="Ronald" width="150"> </p> <p align="center"> Ronald Neves </p> | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Ronald Neves](https://www.linkedin.com/in/ronald-neves-1086042a9) | <p align="center"> [Acesse o Github de Ronald](https://github.com/ronald-neves) |
 | <p align="center"> <img src="https://github.com/user-attachments/assets/abb672e5-32cb-440e-a327-366f2666f59c" alt="Samuel" width="150">  </p> <p align="center"> Samuel Souza </p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Samuel Souza](https://www.linkedin.com/in/samuel-souza-4aa3b9338/) | <p align="center"> [Acesse o Github de Samuel](https://github.com/samuelsouza10)|
 | <p align="center"> <img src="https://github.com/user-attachments/assets/6a4ce95c-4096-4a9e-9293-47b089e48977" alt="Sérgio Dias" width="150"></p> <p align="center">Sérgio Dias</p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Sérgio Dias](https://www.linkedin.com/in/sergio-augusto-dias-65024729a) | <p align="center"> [Acesse o Github de Sérgio](https://github.com/Sergiodias130) |
+
+## ✅ Evolução do Projeto
+Com a continuidade do projeto sob a orientação do professor Hermes Nunes Pereira Junior, a FiveTech está prestes a realizar um avanço significativo no sistema de gestão de vendas e controle de estoque da ChocoArte. Após o sucesso do protótipo previamente desenvolvido, estamos prontos para a implementação física do sistema. Essa fase nos proporciona uma excelente oportunidade para incorporar melhorias e inovações que atenderão ainda mais eficazmente às demandas da empresa.
+
+O desenvolvimento deste projeto foi ampliado com a inclusão de mais dois membros, os alunos:
+
+| Nome                                      | Curso                             | LinkedIn                                                   | GitHub                           |
+| ----------------------------------------- | --------------------------------- | ---------------------------------------------------------- | -------------------------------- |
+| <p align="center"> <img src="https://github.com/user-attachments/assets/abb672e5-32cb-440e-a327-366f2666f59c" alt="Samuel" width="150">  </p> <p align="center"> Samuel Souza </p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Samuel Souza](https://www.linkedin.com/in/samuel-souza-4aa3b9338/) | <p align="center"> [Acesse o Github de Samuel](https://github.com/samuelsouza10)|
+| <p align="center"> <img src="https://github.com/user-attachments/assets/6a4ce95c-4096-4a9e-9293-47b089e48977" alt="Sérgio Dias" width="150"></p> <p align="center">Sérgio Dias</p>   | <p align="center"> Análise e Desenvolvimento de Sistemas | <p align="center"> [Sérgio Dias](https://www.linkedin.com/in/sergio-augusto-dias-65024729a) | <p align="center"> [Acesse o Github de Sérgio](https://github.com/Sergiodias130) |
+
+## 📑 Estrutura da Equipe
+- Organização dos times e responsabilidades
+
+| Área                                      | Membros                            | Responsabilidade                                           |
+| ----------------------------------------- | ---------------------------------  | ---------------------------------------------------------- |
+|<p align="center"> Scrum Master </p> | <p align="center"> João Paulo<br> | <p align="center"> Definição das sprints<br>  Definição dos prazos<br>  Acompanhamento dos times |
+|<p align="center"> Backend </p> | <p align="center"> Lucas Santiago<br> Jorge<br>  Ronald Neves | <p align="center"> Desenvolvimento da lógica e estrutura do servidor, APIs e integrações |
+|<p align="center"> Frontend </p> | <p align="center"> Sérgio Dias<br>  Elias<br>  Samuel Souza | <p align="center"> Desenvolvimento da interface do usuário<br>Samuel Souza: Design e Fluxo de páginas |
+|<p align="center"> Banco de Dados </p> | <p align="center"> Raphael Souza<br>  João Victor Gomes | <p align="center"> Modelagem, otimização e manutenção dos bancos de dados |
