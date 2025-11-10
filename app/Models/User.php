@@ -2,47 +2,88 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
+     * Nome da tabela existente
+     */
+    protected $table = 'usuarios';
+
+    /**
+     * A tabela NÃO tem timestamps
+     */
+    public $timestamps = false;
+
+    /**
+     * Campos que podem ser preenchidos
      */
     protected $fillable = [
-        'name',
+        'nome',
         'email',
-        'password',
+        'senha',
+        'tipo',
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var list<string>
+     * Campos ocultos
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'senha',
     ];
 
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
+     * Override do método de senha
+     * Laravel usa 'password', mas a tabela usa 'senha'
      */
-    protected function casts(): array
+    public function getAuthPassword()
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->senha;
+    }
+
+    /**
+     * Verifica se o usuário é admin
+     */
+    public function isAdmin(): bool
+    {
+        return strtolower($this->tipo) === 'admin';
+    }
+
+    /**
+     * Verifica se o usuário é gerente
+     */
+    public function isGerente(): bool
+    {
+        return strtolower($this->tipo) === 'gerente';
+    }
+
+    /**
+     * Verifica se o usuário é vendedor
+     */
+    public function isVendedor(): bool
+    {
+        return strtolower($this->tipo) === 'vendedor';
+    }
+
+    /**
+     * Accessor para 'name' (Laravel espera 'name', mas temos 'nome')
+     */
+    public function getNameAttribute()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Accessor para 'role' (compatibilidade com o sistema de auth)
+     */
+    public function getRoleAttribute()
+    {
+        return $this->tipo;
     }
 }

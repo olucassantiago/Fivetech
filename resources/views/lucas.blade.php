@@ -1,0 +1,9 @@
+<html>
+    <head>
+        <title>Lucas</title>
+    </head>
+    <body>
+        <h1>Lucas</h1>
+        @include('lucas_comp')
+    </body>
+</html>
