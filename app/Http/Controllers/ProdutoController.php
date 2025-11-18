@@ -281,4 +281,13 @@ class ProdutoController extends Controller
             'data' => $produtos
         ], 200);
     }
+
+    public function paginaProdutos()
+    {
+        $produtos = Produto::with(['estoque', 'historico'])->get();
+
+        return view('produtos.index', compact('produtos'));
+    }
+
+
 }

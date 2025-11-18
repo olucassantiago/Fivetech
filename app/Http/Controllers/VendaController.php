@@ -50,6 +50,16 @@ class VendaController extends Controller
         });
     }
 
+    public function listar()
+    {
+        $vendas = Venda::with('itens.produto')
+            ->orderByDesc('created_at')
+            ->limit(50)
+            ->get();
+
+        return response()->json($vendas);
+    }
+
     public function finalizar($id)
     {
         $venda = Venda::findOrFail($id);
@@ -72,12 +82,11 @@ class VendaController extends Controller
 
         return response()->json(['success' => true, 'data' => $venda]);
     }
-}
 
-public function listar()
-{
-    $vendas = Venda::with('itens.produto')->orderByDesc('created_at')->limit(50)->get();
-    return response()->json($vendas);
-}
+    public function paginaVendas()
+    {
+        $vendas = Venda::with('itens.produto')->orderByDesc('created_at')->get();
 
+        return view('vendas-vendas', compact('vendas'));
+    }
 }

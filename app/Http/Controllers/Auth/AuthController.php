@@ -1,4 +1,12 @@
-public function login(Request $request)
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class AuthController extends Controller
+{
+    public function login(Request $request)
 {
     $validator = Validator::make($request->all(), [
         'email' => 'required|email',
@@ -46,4 +54,5 @@ public function login(Request $request)
             'token_type' => 'Bearer'
         ]
     ], 200);
+}
 }

@@ -9,6 +9,11 @@ use Carbon\Carbon;
 
 class RelatorioController extends Controller
 {
+    public function index()
+    {
+        return view('relatorio');
+    }
+
     public function totalVendidoPorPeriodo(Request $request)
     {
         $request->validate([

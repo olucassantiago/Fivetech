@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
-class AuthController extends Controller
+class LoginController extends Controller
 {
-    // Exibe o formulário de login
-    public function showLoginForm()
+    public function showForm()
     {
-        return view('login'); // resources/views/login.blade.php
+        return view('login'); // Blade login.blade.php
     }
 
-    // Processa login
     public function login(Request $request)
     {
         $request->validate([
@@ -29,22 +28,14 @@ class AuthController extends Controller
             return back()->withErrors(['email' => 'Credenciais inválidas'])->withInput();
         }
 
-        // Autentica o usuário
         Auth::login($user);
 
         return redirect()->intended('/dashboard');
     }
 
-    // Exibe dashboard
-    public function dashboard()
-    {
-        return view('dashboard'); // Crie uma view dashboard.blade.php
-    }
-
-    // Logout
-    public function logout(Request $request)
+    public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect()->route('login')->with('success', 'Logout realizado com sucesso!');
     }
 }

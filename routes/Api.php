@@ -3,91 +3,91 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\EstoqueController;
+use App\Http\Controllers\VendaController;
+use App\Http\Controllers\RelatorioController;
 use Illuminate\Support\Facades\Route;
 
 // ============================================
-// ROTAS PÚBLICAS (não precisam de autenticação)
+// ROTAS PÚBLICAS
 // ============================================
 Route::post('/login', [AuthController::class, 'login']);
 
-// ============================================
-// ROTAS PROTEGIDAS (precisam de autenticação)
-// ============================================
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/estoque/historico', [\App\Http\Controllers\EstoqueController::class, 'historico']);
-    
-    // Logout - qualquer usuário autenticado pode fazer logout
-    Route::post('/logout', [AuthController::class, 'logout']);
-    
-    // Informações do usuário logado
-    Route::get('/me', [AuthController::class, 'me']);
-    
-    // Registrar usuário - APENAS ADMIN pode registrar novos usuários
-    Route::post('/register', [AuthController::class, 'register'])
-         ->middleware('role:admin');
-});
 
 // ============================================
-// EXEMPLOS DE ROTAS COM CONTROLE DE ACESSO
+// ROTAS PROTEGIDAS
 // ============================================
 Route::middleware(['auth:sanctum'])->group(function () {
-    
-    // Rotas que APENAS ADMIN pode acessar
+
+    // ---------- Autenticação ----------
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/me', [AuthController::class, 'me']);
+
+    // ---------- Registrar usuários (Apenas ADMIN) ----------
+    Route::post('/register', [AuthController::class, 'register'])
+        ->middleware('role:admin');
+
+
+    // ============================================
+    // ÁREA ADMINISTRATIVA
+    // ============================================
     Route::middleware('role:admin')->group(function () {
-        Route::get('/admin/dashboard', function () {
-            return response()->json(['message' => 'Dashboard do Administrador']);
-        });
+        Route::get('/admin/dashboard', fn() =>
+            response()->json(['message' => 'Dashboard do Administrador'])
+        );
     });
-    
-    // Rotas que ADMIN e GERENTE podem acessar
+
+    // ============================================
+    // ÁREA GERENCIAL (Admin e Gerente)
+    // ============================================
     Route::middleware('role:admin,gerente')->group(function () {
-        Route::get('/manager/reports', function () {
-            return response()->json(['message' => 'Relatórios Gerenciais']);
-        });
+        Route::get('/manager/reports', fn() =>
+            response()->json(['message' => 'Relatórios Gerenciais'])
+        );
     });
-    
-    // Rotas que TODOS os usuários autenticados podem acessar
-    Route::get('/dashboard', function () {
-        return response()->json(['message' => 'Dashboard do Usuário']);
-    });
+
+    // ============================================
+    // DASHBOARD (qualquer usuário autenticado)
+    // ============================================
+    Route::get('/dashboard', fn() =>
+        response()->json(['message' => 'Dashboard do Usuário'])
+    );
+
 
     // ============================================
     // ROTAS DE ESTOQUE
     // ============================================
     
-    // Consultas (todos podem ver)
-    Route::get('/estoque/historico', [EstoqueController::class, 'historico']);
-    Route::get('/estoque/produto/{id}', [EstoqueController::class, 'historicoProduto']);
-    Route::get('/estoque/alertas', [EstoqueController::class, 'alertas']);
-    Route::get('/estoque/sem-estoque', [EstoqueController::class, 'semEstoque']);
-    Route::get('/estoque/relatorio', [EstoqueController::class, 'relatorio']);
-    
-    // Movimentações (apenas admin e gerente)
-    Route::middleware('role:admin,gerente')->group(function () {
-        Route::post('/estoque/entrada', [EstoqueController::class, 'entrada']);
-        Route::post('/estoque/saida', [EstoqueController::class, 'saida']);
-        Route::post('/estoque/ajuste', [EstoqueController::class, 'ajuste']);
+    // Consultas (todos os usuários autenticados)
+    Route::prefix('estoque')->group(function () {
+        Route::get('/historico', [EstoqueController::class, 'historico']);
+        Route::get('/produto/{id}', [EstoqueController::class, 'historicoProduto']);
+        Route::get('/alertas', [EstoqueController::class, 'alertas']);
+        Route::get('/sem-estoque', [EstoqueController::class, 'semEstoque']);
+        Route::get('/relatorio', [EstoqueController::class, 'relatorio']);
     });
-});
+
+    // Movimentações (apenas admin e gerente)
+    Route::middleware('role:admin,gerente')->prefix('estoque')->group(function () {
+        Route::post('/entrada', [EstoqueController::class, 'entrada']);
+        Route::post('/saida', [EstoqueController::class, 'saida']);
+        Route::post('/ajuste', [EstoqueController::class, 'ajuste']);
+    });
 
 
+    // ============================================
+    // ROTAS DE VENDAS
+    // ============================================
+    Route::get('/vendas', [VendaController::class, 'listar']);
+    Route::post('/vendas', [VendaController::class, 'criar']);
+    Route::post('/vendas/{id}/finalizar', [VendaController::class, 'finalizar']);
+    Route::post('/vendas/{id}/cancelar', [VendaController::class, 'cancelar']);
 
-// ====================
-// ROTAS DE VENDAS
-Route::get('/vendas', [\App\Http\Controllers\VendaController::class, 'listar']);
-// ====================
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/estoque/historico', [\App\Http\Controllers\EstoqueController::class, 'historico']);
-    Route::post('/vendas', [\App\Http\Controllers\VendaController::class, 'criar']);
-    Route::post('/vendas/{id}/finalizar', [\App\Http\Controllers\VendaController::class, 'finalizar']);
-    Route::post('/vendas/{id}/cancelar', [\App\Http\Controllers\VendaController::class, 'cancelar']);
-});
 
-// ====================
-// ROTAS DE RELATÓRIOS
-// ====================
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/estoque/historico', [\App\Http\Controllers\EstoqueController::class, 'historico']);
-    Route::get('/relatorios/total-vendido', [\App\Http\Controllers\RelatorioController::class, 'totalVendidoPorPeriodo']);
-    Route::get('/relatorios/mais-vendidos', [\App\Http\Controllers\RelatorioController::class, 'produtosMaisVendidos']);
+    // ============================================
+    // ROTAS DE RELATÓRIOS
+    // ============================================
+    Route::prefix('relatorios')->group(function () {
+        Route::get('/total-vendido', [RelatorioController::class, 'totalVendidoPorPeriodo']);
+        Route::get('/mais-vendidos', [RelatorioController::class, 'produtosMaisVendidos']);
+    });
 });

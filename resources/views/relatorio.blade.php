@@ -12,13 +12,13 @@
     <title>FiveTech - Relatório</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.css') }}" rel="stylesheet">
 
 </head>
 
@@ -31,59 +31,50 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">FiveTech <sup></sup></div>
+                <div class="sidebar-brand-text mx-3"> FiveTech</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url('/dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>inicio</span></a>
+                    <span>Início</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
+            <div class="sidebar-heading">Interface</div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Reportar problema -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Reportar problemas</span>
+                    <span>Reportar problema</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"></h6>
-                        <a class="collapse-item" href="Contato.html">Fale conosco</a>                        
+                        <a class="collapse-item" href="/Contato.html">Fale conosco</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
+            <!-- Saídas -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Saídas</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"></h6>
-                        
-                        <a class="collapse-item" href="vendas-vendas.html">Vendas</a>
+                        <a class="collapse-item" href="{{ url('/vendas') }}">Vendas</a>
                     </div>
                 </div>
             </li>
@@ -91,51 +82,45 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Paginas -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Paginas</span>
+                    <span>Páginas</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="registro.html">Registrar</a>
+                        <h6 class="collapse-header">Login</h6>
+                        <a class="collapse-item" href="{{ url('/login') }}">Login</a>
+                        <a class="collapse-item" href="{{ url('/register') }}">Registrar</a>
                         <a class="collapse-item" href="Esqueceu a senha.html">Esqueceu a senha?</a>
-                        <div class="collapse-divider"></div>                 
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item active">
-                <a class="nav-link" href="charts.html">
+            <!-- Relatório -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/relatorio') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Relatório</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <!-- Produtos -->
             <li class="nav-item">
-                <a class="nav-link" href="Produtos.html">
+                <a class="nav-link" href="{{ url('/produtos') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Produtos</span></a>
             </li>
 
-            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
+            <div class="sidebar-card d-none d-lg-flex">
+                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+                <p class="text-center mb-2"><strong>FiveTech</strong> 
+            </div>
         </ul>
         <!-- End of Sidebar -->
 
@@ -186,16 +171,20 @@
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
-                                                    <i class="fas fa-search fa-sm"></i>                                             
+                                                <i class="fas fa-search fa-sm"></i>
                                             </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                        </li>                                                
-                    </ul>
+                        </li>
 
-                    <li class="nav-item dropdown no-arrow">
+                        
+                                  
+                                    
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
@@ -214,74 +203,55 @@
                             </div>
                         </li>
 
+                    
+
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Relatório</h1>
-            
-
-                    <!-- Content Row -->
                     <div class="row">
-
                         <div class="col-xl-8 col-lg-7">
-
-                            <!-- Area Chart -->
+                            <!-- Área Chart -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Gráfico</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Total Vendido</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"> Gráfico</canvas>
-                                    </div>
-                                    <hr>                                   
+                                    <canvas id="areaChart"></canvas>
                                 </div>
                             </div>
 
                             <!-- Bar Chart -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Gráfico de barras</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Produtos Mais Vendidos</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="chart-bar">
-                                        <canvas id="myBarChart"></canvas>
-                                    </div>
-                                  
+                                    <canvas id="barChart"></canvas>
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- Donut Chart -->
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Gráfico</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Fontes de Receita</h6>
                                 </div>
-                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                 
+                                    <canvas id="pieChart"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-                <!-- /.container-fluid -->
 
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
+                <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -302,43 +272,102 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pronto para sair?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                    <h5 class="modal-title">Pronto para sair?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body"></div>
+                <div class="modal-body">
+                    Selecione "Sair" abaixo se você deseja encerrar a sessão atual.
+                </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="login.html">Sair</a>
+                    
+                    <!-- Formulário POST para logout -->
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Sair</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script>
+        // Total Vendido (Linha)
+        $.getJSON('/relatorio/total-vendido', { de: '2025-01-01', ate: '2025-12-31' }, function(data) {
+            const ctx = document.getElementById('areaChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Total Vendido'],
+                    datasets: [{
+                        label: 'R$ Vendido',
+                        data: [data.total_vendido],
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        backgroundColor: 'rgba(78, 115, 223, 0.2)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: { responsive: true }
+            });
+        });
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+        // Produtos Mais Vendidos (Barra)
+        $.getJSON('/relatorio/produtos-mais-vendidos', function(data) {
+            const labels = data.mais_vendidos.map(item => 'Produto ' + item.produto_id);
+            const values = data.mais_vendidos.map(item => item.total);
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+            const ctx = document.getElementById('barChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Quantidade Vendida',
+                        data: values,
+                        backgroundColor: '#4e73df'
+                    }]
+                },
+                options: { responsive: true }
+            });
+        });
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/demo/chart-bar-demo.js"></script>
+        // Pie Chart (mesmo exemplo do mais vendidos, mas você pode alterar)
+        $.getJSON('/relatorio/produtos-mais-vendidos', function(data) {
+            const labels = data.mais_vendidos.map(item => 'Produto ' + item.produto_id);
+            const values = data.mais_vendidos.map(item => item.total);
+
+            const ctx = document.getElementById('pieChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        backgroundColor: ['#4e73df','#1cc88a','#36b9cc','#f6c23e','#e74a3b'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: { responsive: true }
+            });
+        });
+    </script>
 
 </body>
 

@@ -14,7 +14,7 @@ class User extends Authenticatable
     /**
      * Nome da tabela existente
      */
-    protected $table = 'usuarios';
+    protected $table = 'users';
 
     /**
      * A tabela NÃO tem timestamps
@@ -25,17 +25,17 @@ class User extends Authenticatable
      * Campos que podem ser preenchidos
      */
     protected $fillable = [
-        'nome',
+        'name',
         'email',
-        'senha',
-        'tipo',
+        'password',
+        'role',
     ];
 
     /**
      * Campos ocultos
      */
     protected $hidden = [
-        'senha',
+        'password',
     ];
 
     /**
@@ -44,7 +44,7 @@ class User extends Authenticatable
      */
     public function getAuthPassword()
     {
-        return $this->senha;
+        return $this->password;
     }
 
     /**
@@ -52,7 +52,7 @@ class User extends Authenticatable
      */
     public function isAdmin(): bool
     {
-        return strtolower($this->tipo) === 'admin';
+        return strtolower($this->role) === 'admin';
     }
 
     /**
@@ -60,7 +60,7 @@ class User extends Authenticatable
      */
     public function isGerente(): bool
     {
-        return strtolower($this->tipo) === 'gerente';
+        return strtolower($this->role) === 'gerente';
     }
 
     /**
@@ -68,7 +68,7 @@ class User extends Authenticatable
      */
     public function isVendedor(): bool
     {
-        return strtolower($this->tipo) === 'vendedor';
+        return strtolower($this->role) === 'vendedor';
     }
 
     /**
@@ -76,7 +76,7 @@ class User extends Authenticatable
      */
     public function getNameAttribute()
     {
-        return $this->nome;
+        return $this->name;
     }
 
     /**
@@ -84,6 +84,6 @@ class User extends Authenticatable
      */
     public function getRoleAttribute()
     {
-        return $this->tipo;
+        return $this->role;
     }
 }
